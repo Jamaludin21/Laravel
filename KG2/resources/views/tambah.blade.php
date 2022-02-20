@@ -1,23 +1,22 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Tutorial Membuat CRUD Pada Laravel - www.malasngoding.com</title>
+	<title>CRUD Laravel</title>
 </head>
 <body>
 
-	<h3>Data Pegawai</h3>
+	<h3>Data Mahasiswa</h3>
  
-	<a href="/pegawai"> Kembali</a>
+	<a href="/mahasiswa"> Kembali</a>
 	
 	<br/>
 	<br/>
  
-	<form action="/pegawai/store" method="post">
+	<form action="/mahasiswa/store" method="post">
 		{{ csrf_field() }}
 		Nama <input type="text" name="nama"> <br/>
-		Jabatan <input type="text" name="jabatan"> <br/>
-		Umur <input type="number" name="umur"> <br/>
 		Alamat <textarea name="alamat"></textarea> <br/>
+		Divisi <input type="text" name="divisi"> <br/>
 		<input type="submit" value="Simpan Data">
 	</form>
 		
