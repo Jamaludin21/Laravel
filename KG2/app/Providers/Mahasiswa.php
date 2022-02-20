@@ -4,7 +4,7 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class mahasiswa extends Model{
+class Mahasiswa extends Model{
     protected $table = "mahasiswa";
     protected $primaryKey = "id";
     protected $fillable = [

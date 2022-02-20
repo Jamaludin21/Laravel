@@ -26,7 +26,7 @@ class MahasiswaController extends Controller
      */
     public function create()
     {
-        //
+        return view('create');
     }
 
     /**
@@ -37,7 +37,12 @@ class MahasiswaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        DB::table('mahasiswa')->insert([
+			'mahasiswa_nama' => $request->nama,
+			'mahasiswa_alamat' => $request->alamat,
+            'mahasiswa_divisi' => $request->divisi,
+		]);
+		return redirect('/mahasiswa');
     }
 
     /**
@@ -59,7 +64,8 @@ class MahasiswaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $mahasiswa = DB::table('mahasiswa')->where('mahasiswa_id',$id)->get();
+		return view('edit',['mahasiswa' => $mahasiswa]);
     }
 
     /**
@@ -71,7 +77,13 @@ class MahasiswaController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        DB::table('mahasiswa')->where('mahasiswa_id',$request->id)->update([
+			'mahasiswa_nama' => $request->nama,
+			'mahasiswa_alamat' => $request->alamat,
+            'mahasiswa_divisi' => $request->divisi,
+		]);
+		// alihkan halaman ke halaman mahasiswa
+		return redirect('/mahasiswa');
     }
 
     /**
@@ -82,6 +94,9 @@ class MahasiswaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        DB::table('mahasiswa')->where('mahasiswa_id',$id)->delete();
+		
+		// alihkan halaman ke halaman mahasiswa
+		return redirect('/mahasiswa');
     }
 }

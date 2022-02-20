@@ -7,8 +7,8 @@
  
 	<h3>Data Mahasiswa</h3>
  
-	<a href="/mahasiswa/tambah"> + Tambah Mahasiswa Baru</a>
-	
+	<a href="/mahasiswa/create"> + Tambah Mahasiswa Baru</a>
+
 	<br/>
 	<br/>
  
@@ -26,7 +26,7 @@
 			<td>
 				<a href="/mahasiswa/edit/{{ $p->mahasiswa_id }}">Edit</a>
 				|
-				<a href="/mahasiswa/hapus/{{ $p->mahasiswa_id }}">Hapus</a>
+				<a href="/mahasiswa/destroy/{{ $p->mahasiswa_id }}">Hapus</a>
 			</td>
 		</tr>
 		@endforeach
